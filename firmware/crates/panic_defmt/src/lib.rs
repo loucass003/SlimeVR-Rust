@@ -2,7 +2,7 @@
 
 use atomic_polyfill::{AtomicBool, Ordering};
 
-use defmt::error;
+use defmt::{error, flush};
 
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
@@ -22,6 +22,6 @@ fn panic(info: &core::panic::PanicInfo) -> ! {
 		}
 	}
 	error!("{:#?}", defmt::Debug2Format(info));
-
+	flush();
 	loop {}
 }
