@@ -36,6 +36,8 @@ use nrf_softdevice as _;
 
 /// Sets up any global state
 pub fn setup() {
+	defmt::flush();
+
 	// Initialize the global allocator BEFORE you use it
 	{
 		const HEAP_SIZE: usize = 10 * 1024;
@@ -47,6 +49,8 @@ pub fn setup() {
 			#[cfg(cortex_m)]
 			ALLOCATOR.init(HEAP.as_mut_ptr() as usize, HEAP_SIZE);
 		}
+
+		
 	}
 }
 

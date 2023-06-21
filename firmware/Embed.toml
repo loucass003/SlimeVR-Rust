@@ -1,17 +1,17 @@
 ################
 # Default config
 [default.probe]
-protocol = "Jtag" # ESP32*
-# protocol = "Swd" # NRF52*
+# protocol = "Jtag" # ESP32*
+protocol = "Swd" # NRF52*
 
 [default.general]
-chip = "esp32c3"
-# chip = "nrf52840"
+# chip = "esp32c3"
+chip = "nrf52840"
 
 [default.rtt]
 enabled = true
-#up_mode = "BlockIfFull" # Enable this if you need to view all messages
-up_mode = "NoBlockTrim"
+up_mode = "BlockIfFull" # Enable this if you need to view all messages
+# up_mode = "NoBlockTrim"
 channels = [
 	{ up = 0, down = 0, name = "Firmware logs via defmt", format = "Defmt" },
 ]
