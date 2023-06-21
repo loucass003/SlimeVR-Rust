@@ -74,7 +74,7 @@ fn main() -> ! {
 		#[cfg(bbq)]
 		s.spawn(logger_task(bbq, bbq_peripheral)).unwrap();
 
-		#[cfg(any(feature = "nrf-boot-s140", feature = "nrf-boot-s132"))]
+		#[cfg(feature = "net-ble")]
 		s.spawn(crate::networking::ble::ඞ::softdevice_task())
 			.unwrap()
 	});
